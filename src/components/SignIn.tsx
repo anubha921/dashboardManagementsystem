@@ -25,7 +25,7 @@ function SignIn() {
             if(result.payload){
                 setEmail('');
                 setPassword('');
-                navigate('/')
+                navigate('/home')
             }
         })
     }
@@ -53,10 +53,10 @@ function SignIn() {
             {loading?'Loading...':'SignIn'}
           </button>
           {error&&(
-                <div className='alert alert-danger' style={{border: '2px solid black'}}>{error}</div>
+                <div className='bg-red-500 text-white p-2 my-2 rounded-md w-full'>{error}</div>
             )}
             <span>Not a member?</span>
-            <Link to="/signup">Sign Up</Link>      
+            <Link to="/signup" className="text-blue-600 p-2">Sign Up</Link>      
         </form>
     </div>
   )

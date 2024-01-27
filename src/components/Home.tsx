@@ -1,5 +1,4 @@
 import React from 'react'
-import SignIn from './SignIn'
 import {Link} from 'react-router-dom'
 import { useState } from 'react';
 
@@ -26,7 +25,7 @@ function Home() {
         {user&&(
             <div>
             <h1 className="text-2xl font-semibold mb-4">I am Dashboard</h1>
-            <Link to="/signin" className="bg-blue-500 text-white p-2 rounded-md w-full hover:bg-blue-600" onClick={handleLogout}>Signout</Link>
+            <Link to="/" className="bg-blue-500 text-white p-2 rounded-md w-full hover:bg-blue-600" onClick={handleLogout}>Signout</Link>
             </div>
         )}
     </div>

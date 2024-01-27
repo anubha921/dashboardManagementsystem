@@ -1,16 +1,12 @@
 import React,{useState} from 'react'
-import { useAppDispatch, useAppSelector } from '../Store';
-import { loginUser } from '../Store/UserSlice';
+import { useAppDispatch} from '../Store';
+import { signUpUser } from '../Store/UserSlice';
 import {useNavigate} from 'react-router-dom'
 
 function SignUp() {
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
-
-    // redux state
-    const loading = useAppSelector((state)=>state.user.loading)
-    const error = useAppSelector((state)=>state.user.error)
 
     const dispatch = useAppDispatch();
     const navigate = useNavigate();
@@ -20,12 +16,12 @@ function SignUp() {
         let userCredentials = {
             name,email,password
         }
-        dispatch(loginUser(userCredentials)).then((result)=>{
+        dispatch(signUpUser(userCredentials)).then((result)=>{
             if(result.payload){
                 setName('')
                 setEmail('');
                 setPassword('');
-                navigate('/')
+                navigate('/home')
             }
         })
     }
